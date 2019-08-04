@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>launch-uri demo</title>
+    <script src="launch-uri.js"></script>
+    <script>
+      function launch() {
+        var url = document.querySelector("input[name='url']").value;
+        launchUri(url, function() {
+          console.log("launch succeeded!");
+        }, function () {
+          console.log("launch failed...");
+        });
+        return false;
+      }
+    </script>
+  </head>
+  <body>
+    <form onsubmit="return launch();">
+      <label for="url">URL</label>
+      <input type="text" name="url">
+      <input type="submit" value="boot!">
+    </form>
+  </body>
+</html>
